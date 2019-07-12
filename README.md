@@ -1,4 +1,4 @@
-ipset-blacklist
+WHACK List IPS Sensor Plugin (Snort Only)
 ===============
 
 A Bash shell script which uses ipset and iptables to ban a large number of IP addresses published in IP blacklists. ipset uses a hashtable to store/fetch IP addresses and thus the IP lookup is a lot (!) faster than thousands of sequentially parsed iptables ban rules. ~~However, the limit of an ipset list is 2^16 entries.~~

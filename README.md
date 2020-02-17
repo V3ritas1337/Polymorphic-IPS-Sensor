@@ -116,10 +116,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 * Derrick Newton - Coventry University: mentor for the duration of this ongoing project.  
 * User Trick77 - Awesome Open Source Blacklists. 
-<<<<<<< Updated upstream
 
 ## More Information
 
 Learn more about the theory behind this project on my [website](https://www.josefflewis.co.uk)
-=======
->>>>>>> Stashed changes

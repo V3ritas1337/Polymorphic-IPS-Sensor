@@ -1,15 +1,20 @@
 # WHACK List IPS Sensor Plugin v0.1.1 
 
-White+Black (WHACK) List is a Snort IDS Plugin, the main function of the plugin is to provide Snort with a more dynamic list of blocked IPs; using IDS devices found on the network, or found on endpoint through the internet, it is possible to update a publicily accessible WHACK list based on malicious IPs flagged by existing IDS devices.<br>Not all IDS devices have sound snort rules, many malicious IPs may bypass IDS rules,while the same malicious IP may not on another IDS, with different rules; this tool gives  
+The main function of the plugin is to provide Snort with a more dynamic list of blocked IPs using IDS devices found on the network or found on endpoints through the internet. As IDS system rules have to be manually updated or through vendor updates, it is not an efficient way to keep up with the amount of malicious packets found through the internet. The WHACK list will update existing blacklists that Snort will use, therefore preventing attacks opposed to detecting attacks. 
 
-[Snort IDS](https://snort.org) + [ipset-blacklist](https://github.com/trick77/ipset-blacklist) + Some Coding. 
+*Defence in Depth*
+Furthermore, as rules are not always an effective method (plethora of reasons.. not updated, new signatures etc.), a blocked attack on one network may not be blocked on another. This is a solution as the potentially vulnerable network will have an updated blacklist, so it may not be totally necessary to use rules as main defence method.
 
-The general idea of how the program functions: 
+It is possible to update a publicily accessible WHACK list based on malicious IPs flagged by existing IDS devices.<br>
+
+[Snort IDS](https://snort.org) + [ipset-blacklist](https://github.com/trick77/ipset-blacklist) + Some Python Coding. 
+
+## How the program functions: 
 
 ![Flow Chart](https://github.com/V3ritas1337/Polymorphic-IPS-Sensor/blob/master/images/flowChartFinal.svg)
 
 
-- **Cron: Has One Hour Passed**:  This cron job is used to execute the core.py script. 
+- **Cron: Has One Hour Passed?**:  This cron job is used to execute the core.py script. 
 
 - **blacklist.sh**: It will check through open source community blacklists for new entries, adding to the existing blacklist. At the same time using *core.py* more IPs will be added based on alerts. 
 

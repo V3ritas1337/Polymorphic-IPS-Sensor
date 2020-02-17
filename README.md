@@ -2,7 +2,7 @@
 
 The main function of the plugin is to provide Snort with a more dynamic list of blocked IPs using IDS devices found on the network or found on endpoints through the internet. As IDS system rules have to be manually updated or through vendor updates, it is not an efficient way to keep up with the amount of malicious packets found through the internet. The WHACK list will update existing blacklists that Snort will use, therefore preventing attacks opposed to detecting attacks. 
 
-*Defence in Depth*
+*Defence in Depth*<br>
 Furthermore, as rules are not always an effective method (plethora of reasons.. not updated, new signatures etc.), a blocked attack on one network may not be blocked on another. This is a solution as the potentially vulnerable network will have an updated blacklist, so it may not be totally necessary to use rules as main defence method.
 
 It is possible to update a publicily accessible WHACK list based on malicious IPs flagged by existing IDS devices.<br>

@@ -2,9 +2,13 @@
 
 White+Black (WHACK) List is a Snort IDS Plugin, the main function of the plugin is to provide Snort with a more dynamic list of blocked IPs; using IDS devices found on the network, or found on endpoint through the internet, it is possible to update a publicily accessible WHACK list based on malicious IPs flagged by existing IDS devices.<br>Not all IDS devices have sound snort rules, many malicious IPs may bypass IDS rules,while the same malicious IP may not on another IDS, with different rules; this tool gives  
 
-![Snort IDS](https://snort.org) + [ipset-blacklist](https://github.com/trick77/ipset-blacklist) + Some Coding. 
+[Snort IDS](https://snort.org) + [ipset-blacklist](https://github.com/trick77/ipset-blacklist) + Some Coding. 
 
 The general idea of how the program functions: 
+
+![Flow Chart](https://github.com/V3ritas1337/Polymorphic-IPS-Sensor/blob/master/images/flowChartFinal.svg)
+
+
 
 
 ## Staging: Alpha 

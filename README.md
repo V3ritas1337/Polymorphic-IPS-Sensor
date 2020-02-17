@@ -9,6 +9,19 @@ The general idea of how the program functions:
 ![Flow Chart](https://github.com/V3ritas1337/Polymorphic-IPS-Sensor/blob/master/images/flowChartFinal.svg)
 
 
+- **Cron: Has One Hour Passed**:  This cron job is used to execute the core.py script. 
+
+- **blacklist.sh**: It will check through open source community blacklists for new entries, adding to the existing blacklist. At the same time using *core.py* more IPs will be added based on alerts. 
+
+- **core.py**: This script checks for alerts from Snort. 
+
+  - **Are there Alerts?**: If yes, it will check in the alerts for the word "spp_reputation", this word is associated with blacklisted IPs. 
+
+  - **Split Alert Line into Array**: This is to locate the malicious IPs in the alert file, where it will append the local blacklist from ipset-blacklist.   
+
+  - **Open and Append Existing Blacklist**: From the ipset-blacklist, it will append it with found malcious IPs from snort. This is where Detection can become Prevention.  
+
+**update-blacklist.sh**: once all this has been done, the blacklist will be uploaded to a web server which can be downloaded and / or updated from other IDS systems running this program.  
 
 
 ## Staging: Alpha 
@@ -17,7 +30,8 @@ The general idea of how the program functions:
 - Sort Readme
 - Fix Snort Log as bash command does not function
 - Add adaptive ruling 
-
+- Authentication is needed for website as anyone can upload to central server (potential single point of failure
+  
 ## Getting Started
 
 <b>You are going to want some gifs of the program working<b> 

@@ -1,14 +1,35 @@
-# WHACK List IPS Sensor Plugin (Snort Only)
+# WHACK List IPS Sensor Plugin v0.1.1 
 
-White+Black (WHACK) List is a Snort IDS Plugin 
+White+Black (WHACK) List is a Snort IDS Plugin, the main function of the plugin is to provide Snort with a more dynamic list of blocked IPs; using IDS devices found on the network, or found on endpoint through the internet, it is possible to update a publicily accessible WHACK list based on malicious IPs flagged by existing IDS devices.<br>Not all IDS devices have sound snort rules, many malicious IPs may bypass IDS rules,while the same malicious IP may not on another IDS, with different rules; this tool gives  
+
+![snort][https://popravak.files.wordpress.com/2018/08/thumb-snort.jpg] + [ipset-blacklist](https://github.com/trick77/ipset-blacklist) + Some Coding. 
+
+The general idea of how the program functions: 
+
+
+## Staging: Alpha 
+### To Be Done: 
+
+- Sort Readme
+- Fix Snort Log as bash command does not function
+- Add adaptive ruling 
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+<b>You are going to want some gifs of the program working<b> 
+<b>Image of basic idea of the program<b>
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+- Python v3.4+
+  - libs:
+    - datetime
+- Snort IDS 
+- Community blacklist generated using the following shell script: 
+  - [ipset-blacklist](https://github.com/trick77/ipset-blacklist)
+- Linux OS (Preferebly)
+- Docker Engine 
+- Nginx Server (In this case, Nginx container was used for testing purposes)
 
 ```
 Give examples

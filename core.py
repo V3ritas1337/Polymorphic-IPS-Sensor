@@ -16,27 +16,33 @@ command = ("snort -A console -q -c /etc/snort/snort.conf -i vmnet8 -l /var/log/s
 #log here 
 def whackListUpd():
 		word = 'spp_reputation'
+		#look for blacklisted IPs in logs
 
 		with open('/var/log/snort/%s','r').format(date) as f: #issue: does not do seconds :( 
 			lines = f.read().split("\n")
-
+		#create a log with todays date
 		for i,line in enmerate(lines):
 			if word in line:
 				s = word
 				rec = s.split()
 				src = rec[14] # or word in line.split() to search for full words
 				#can I confirm each src IP will be array position 6?
+				#using this for loop, it will look for the IP from the logs 
 				with open('ip-blacklist.list','ab') as f:
 					f.write(src)
+					#appending the adaptive blacklist here
 					#logging here
 			else
 				with open('ip-blacklist.list') as f:
 					s = len(f.readlines())
 					print("There are currently %s malicious IPs blocked! :)").format(s)
+					#once data has been added locally, it will be uploaded to the web server below
 
-def postWeb():
-	with open('ip-blacklist.list', 'rb') as f:
-    	r = requests.post('http://localhost:8080', files={'ip-blacklist.list': f})
+with open('ip-blacklist.list', 'rb') as f:
+    r = requests.post('http://localhost:8080', files={'ip-blacklist.list': f}
+
+
+
 #some sort of authentication? --> unless anyone could upload a file? --> add to crit evaluation
 
 #Example of splitting a line:
